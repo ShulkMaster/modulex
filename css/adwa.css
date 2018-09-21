@@ -19,7 +19,7 @@
     --vaper-text: #5c5c5c;
     --wt-color: #2050d8;
     --dr-color: #fff;
-    */ line-height: 1.45em;
+    line-height: 1.45em;
 }
 
 * {
@@ -48,6 +48,7 @@ body {
     width: 85%;
     color: #fff;
     box-shadow: 5px 4px 8px var(--shadow);
+    max-width: 1300px;
 }
 
 .panel {
@@ -187,6 +188,7 @@ nav ul li a:hover {
     position: relative;
     align-items: center;
     align-content: space-around;
+    
 }
 
 .subcontainer2 strong {
@@ -214,8 +216,8 @@ nav ul li a:hover {
 .subcontainer2 .portrait img {
     display: block;
     margin: 1em auto;
-    width: 90%;
-    height: 90%;
+    width: 80%;
+    height: 80%;
     border-radius: 8px;
     overflow: hidden;
     object-fit: cover;
@@ -242,15 +244,16 @@ nav ul li a:hover {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    background-position: center;
-    transform: scaleX(-1);
+    background-position: top;
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    z-index: -1;
+    transform: scale(-1,1.04) translateZ(-1px) ;
+    z-index: -2;
     margin: 1em 0em;
+    overflow: hidden;
 }
 
 .sqre {
@@ -262,34 +265,27 @@ nav ul li a:hover {
     background-color: #fff;
 }
 
-.sqre .coverpic {
+.sqre .card{
+    background-color: #ff00fa;
     position: relative;
-    overflow: hidden;
-
 }
 
-.sqre .coverpic img {
-    display: block;
-    margin: 1em auto;
-    width: 90%;
-    height: 90%;
-    border-radius: 2em;
-    object-fit: cover;
-    object-position: center;
-}
-
-.sqre .coverpic img:hover .tx {
-    visibility: visible;
-}
-
-.tx {
-    content: " ";
-    position: absolute;
+.sqre .card .contenimg {
     background-image: linear-gradient(90deg, var(--enfasis-color1) 25%, var(--enfasis-color2) 80%);
-    opacity: 0.55;
-    z-index: 0;
+    opacity: 0.8;
     left: 0;
     right: 0;
     top: 0;
     bottom: 0;
+}
+
+.sqre .card  img{
+    display: block;
+    margin: 1em auto;
+    width: 80%;
+    height: 80%;
+    border-radius: 8px;
+    overflow: hidden;
+    object-fit: cover;
+    object-position: center;
 }
