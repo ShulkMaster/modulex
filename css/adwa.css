@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+
+:root {
+    /*
+    set de color pedofule (original)
+    --main-bgcolor: #4b379a;
+    --enfasis-color1: #3224b0;
+    --enfasis-color2: #be5ede;
+    --shadow: 3b278a;
+    --vaper-text: #9c9c9c;
+    --wt-color: #fff;
+    --dr-color: #000;
+    */
+    /*nuevo set de color personalizado*/
+    --main-bgcolor: #20224f;
+    --enfasis-color1: #202020;
+    --enfasis-color2: #09268f;
+    --shadow: #15152f;
+    --vaper-text: #5c5c5c;
+    --wt-color: #2050d8;
+    --dr-color: #fff;
+    */ line-height: 1.45em;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: var(--main-bgcolor);
+}
+
+.headband {
+    position: fixed;
+    top: 0;
+    display: block;
+    width: 100%;
+    background-color: #000000;
+    z-index: 3;
+}
+
+.container {
+    margin: 7em auto;
+    width: 85%;
+    color: #fff;
+    box-shadow: 5px 4px 8px var(--shadow);
+}
+
+.panel {
+    position: relative;
+}
+
+.panel::before {
+    content: " ";
+    position: absolute;
+    background: url(../img/banner.jpg) no-repeat;
+    /* idea de nestor usar position top para arreglar la imagen de samus y que no solo se vea el pecho*/
+    background-position: top;
+    background-size: cover;
+    z-index: -2;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.panel::after {
+    content: " ";
+    position: absolute;
+    background-image: linear-gradient(90deg, var(--enfasis-color1) 25%, var(--enfasis-color2) 80%);
+    opacity: 0.55;
+    z-index: -1;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.subcontainer {
+    display: flex;
+    flex-direction: column;
+    padding: 1.2em;
+    align-items: center;
+
+}
+
+.subcontainer > * {
+    padding: 0.1em;
+    margin: 0.6em;
+}
+
+.subcontainer p {
+    font-size: 1.5em;
+}
+
+.subcontainer h1 {
+    font-size: 4em;
+}
+
+.topbar {
+    margin-bottom: 1em;
+    display: flex;
+    width: 100%;
+    margin: 1.2em;
+    padding: 1.2em;
+    justify-content: space-between;
+}
+
+.topbar nav {
+    display: inline-block;
+    flex-wrap: wrap-reverse;
+    align-items: center;
+}
+
+.topbar span {
+    font-size: 1.8em;
+    font-weight: 700;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 1.1em;
+    font-size: 1.2em;
+
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+nav ul li a:hover {
+    color: #000;
+}
+
+.roundbut {
+    text-decoration: none;
+    text-transform: capitalize;
+    border-radius: 2em;
+    line-height: 2em;
+    margin: 1em;
+    padding: 0.1em 1.8em;
+    border-width: 2px;
+    border-style: solid;
+    transition: all 0.5s ease;
+}
+
+.wite {
+    color: var(--wt-color);
+    border-color: var(--wt-color);
+}
+
+.dark {
+    color: #000;
+    border-color: #000;
+}
+
+.wite:hover {
+    background: linear-gradient(90deg, var(--enfasis-color1) 0%, var(--enfasis-color2) 100%) no-repeat;
+    padding: 0.1em 2em;
+    border-color: transparent;
+
+}
+
+.dark:hover {
+    color: var(--dr-color);
+    background: linear-gradient(90deg, var(--enfasis-color1) 0%, var(--enfasis-color2) 100%) no-repeat;
+    padding: 0.1em 2em;
+    border-color: transparent;
+
+}
+
+.subcontainer2 {
+    background-color: #fff;
+    color: var(--vaper-text);
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 auto;
+    position: relative;
+    align-items: center;
+    align-content: space-around;
+}
+
+.subcontainer2 strong {
+    color: #000;
+}
+
+.subcontainer2 h2 {
+    font-size: 2.09em;
+    line-height: 1.1;
+}
+
+.subcontainer2 .featured {
+    margin: 1em;
+    width: 65%;
+}
+
+.subcontainer2 .featured > * {
+    padding: 0.5em 1.5em;
+}
+
+.subcontainer2 .portrait {
+    padding: 0.5em;
+}
+
+.subcontainer2 .portrait img {
+    display: block;
+    margin: 1em auto;
+    width: 90%;
+    height: 90%;
+    border-radius: 8px;
+    overflow: hidden;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+.trans {
+    background-color: transparent;
+}
+
+.subcontainer2.right {
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.subcontainer2.right .featured {
+    width: 50%;
+    padding: 1em;
+}
+
+.paralax {
+    background-image: url(../img/bodywallpaper.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    transform: scaleX(-1);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    margin: 1em 0em;
+}
+
+.sqre {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 1em;
+    padding: 1em;
+    background-color: #fff;
+}
+
+.sqre .coverpic {
+    position: relative;
+    overflow: hidden;
+
+}
+
+.sqre .coverpic img {
+    display: block;
+    margin: 1em auto;
+    width: 90%;
+    height: 90%;
+    border-radius: 2em;
+    object-fit: cover;
+    object-position: center;
+}
+
+.sqre .coverpic img:hover .tx {
+    visibility: visible;
+}
+
+.tx {
+    content: " ";
+    position: absolute;
+    background-image: linear-gradient(90deg, var(--enfasis-color1) 25%, var(--enfasis-color2) 80%);
+    opacity: 0.55;
+    z-index: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
