@@ -35,12 +35,30 @@ body {
 }
 
 .headband {
+    background-color: #000000;
+    display: flex;
+    justify-content: space-between;
     position: fixed;
     top: 0;
-    display: block;
+    padding: 1em;    
     width: 100%;
-    background-color: #000000;
     z-index: 3;
+}
+
+.headband > p{
+    color: var(--dr-color);
+}
+
+.samns{
+    display: inline-block;
+    color: #fff;
+}
+.samns a{
+    color: #fff;
+    padding: 0.5em;
+    margin: 0.2em 0.4em;
+    background-color: var(--main-bgcolor);
+    border: 2px solid #ffffff;
 }
 
 .container {
@@ -49,6 +67,7 @@ body {
     color: #fff;
     box-shadow: 5px 4px 8px var(--shadow);
     max-width: 1300px;
+    min-width: 500px;
 }
 
 .panel {
@@ -188,7 +207,7 @@ nav ul li a:hover {
     position: relative;
     align-items: center;
     align-content: space-around;
-    
+
 }
 
 .subcontainer2 strong {
@@ -229,12 +248,13 @@ nav ul li a:hover {
     background-color: transparent;
 }
 
-.subcontainer2.right {
+.subcontainer2.rightp {
     justify-content: flex-end;
     align-items: center;
+    overflow: hidden;
 }
 
-.subcontainer2.right .featured {
+.subcontainer2.rightp .featured {
     width: 50%;
     padding: 1em;
 }
@@ -250,42 +270,100 @@ nav ul li a:hover {
     bottom: 0;
     left: 0;
     right: 0;
-    transform: scale(-1,1.04) translateZ(-1px) ;
+    transform: scale(-1, 1.05);
     z-index: -2;
     margin: 1em 0em;
-    overflow: hidden;
 }
 
 .sqre {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    grid-gap: 1em;
-    padding: 1em;
-    background-color: #fff;
+    grid-gap: 1.9em 3em;
+    padding: 1.5em;
+    background-color: #dadada;
 }
 
-.sqre .card{
-    background-color: #ff00fa;
-    position: relative;
+.sqre .panel {
+    border-radius: 2em;
+    overflow: hidden;
+    box-shadow: 8px 7px 12px var(--shadow);
+    perspective: 5px;
 }
 
-.sqre .card .contenimg {
+.sqre .panel .corete {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.sqre .panel .corete::before {
+    content: " ";
+    position: absolute;
     background-image: linear-gradient(90deg, var(--enfasis-color1) 25%, var(--enfasis-color2) 80%);
-    opacity: 0.8;
+    opacity: 0;
     left: 0;
     right: 0;
     top: 0;
     bottom: 0;
+    transition: opacity 0.9s;
 }
 
-.sqre .card  img{
-    display: block;
-    margin: 1em auto;
-    width: 80%;
-    height: 80%;
-    border-radius: 8px;
-    overflow: hidden;
-    object-fit: cover;
+.sqre .panel img {
+    width: 100%;
+    height: 100%;
     object-position: center;
+    object-fit: cover;
+}
+
+.sqre .panel .contenimg {
+    padding: 0.8em;
+    position: relative;
+    transform: rotate(60deg);
+    opacity: 0;
+    transition: all 0.9s ease;
+}
+
+.sqre .panel:hover .contenimg {
+    opacity: 1;
+    transform: rotate(0deg);
+}
+
+.sqre .panel:hover .corete::before{
+    opacity: 0.9;
+}
+
+@media only screen and (max-width: 700px) {
+    .container{
+        width: 100%;
+    }
+
+    .subcontainer h1{
+        font-size: 2em;
+    }
+
+    .subcontainer2{
+        flex-direction: column;
+    }
+
+    .subcontainer2 .featured {
+        width: 90%;
+    }
+    .subcontainer2.rightp .featured {
+        width: 65%;
+        padding: 0.5em;
+    }
+    .sqre .panel img {
+        object-fit: fill;
+    }
+    
+}
+
+@media only screen and (max-width: 1000px) {
+    .sqre{
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
 }

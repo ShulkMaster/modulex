@@ -1,0 +1,139 @@
+.contenedor {
+    width: 100%;
+    padding: 50px;
+    background-image: linear-gradient(90deg, var(--enfasis-color1) 25%, var(--enfasis-color2) 80%);
+}
+
+.contenedor .formula {
+    width: 100%;
+    margin: auto;
+}
+
+.contenedor .formula .card {
+    box-sizing: border-box;
+    border: 2px solid var(--dr-color);
+}
+
+.contenedor .formula .card .primiuntext{
+    background-color: #DDDDDD
+}
+
+
+.contenedor .formula .capturador {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.contenedor .formula .capturador label {
+    display: block;
+    font-size: 1.2em;
+    margin-left: 20px;
+    color: #303F9F;
+}
+
+.contenedor .formula .capturador input[type="text"],
+.contenedor .formula .capturador input[type="email"],
+.contenedor .formula .capturador input[type="password"],
+.contenedor .formula .capturador input[type="tel"]{
+    font-size: 1.2em;
+    color: #303F9F;
+    width: 85%;
+    margin-left: 2em;
+    outline: none;
+    padding: 15px;
+    background: none;
+    border: none;
+    border-bottom: 2px solid #BBDEFB;
+}
+
+.contenedor .formula .capturador input[type="text"]:focus,
+.contenedor .formula .capturador input[type="text"]:active,
+.contenedor .formula .capturador input[type="email"]:focus,
+.contenedor .formula .capturador input[type="email"]:active,
+.contenedor .formula .capturador input[type="password"]:focus,
+.contenedor .formula .capturador input[type="password"]:active,
+.contenedor .formula .capturador input[type="tel"]:focus,
+.contenedor .formula .capturador input[type="tel"]:active {
+    outline: none;
+    border-bottom: 2px solid var(--enfasis-color2);
+}
+
+.contenedor .formula .capturador input[type="text"]::placeholder,
+.contenedor .formula .capturador input[type="email"]::placeholder,
+.contenedor .formula .capturador input[type="password"]::placeholder,
+.contenedor .formula .capturador input[type="tel"]::placeholder {
+    color: grey;
+    opacity: 1;
+}
+
+.contenedor .formula .capturador input[type="text"]:focus::placeholder,
+.contenedor .formula .capturador input[type="email"]:focus::placeholder,
+.contenedor .formula .capturador input[type="password"]:focus::placeholder,
+.contenedor .formula .capturador input[type="tel"]:focus::placeholder {
+    opacity: 0.4;
+    color: var(--enfasis-color2);
+}
+
+.contenedor .formula .capturador input[type="text"].error,
+.contenedor .formula .capturador input[type="email"].error,
+.contenedor .formula .capturador input[type="password"].error {
+    border-bottom: 2px solid #D32F2F;
+}
+
+.contenedor .formula .capturador input[type="text"].error + label,
+.contenedor .formula .capturador input[type="email"].error + label,
+.contenedor .formula .capturador input[type="password"].error + label {
+    color: #D32F2F;
+}
+
+.contenedor .formula .capturador.error label {
+    color: #D32F2F;
+}
+
+.contenedor .formula .capturador.error label:hover {
+    background: rgba(211, 47, 47, 0.2);
+}
+
+.contenedor .formula .capturador.error label:before {
+    border: 2px solid #D32F2F;
+}
+
+.contenedor .formula input[type="submit"] {
+    background-color: var(--main-bgcolor);
+    border-radius: 1.3em;
+    border: 2px solid #f2f2f2;
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-size: 1.6em;
+    padding: 15px;
+    width: 65%;
+    transition: all 0.3s ease;
+    margin-top: 32px;
+    margin-left: auto;
+    margin-right: auto;
+  
+}
+
+.contenedor .formula input[type="submit"]:hover {
+    background: var(--enfasis-color2);
+    width: 75%;
+}
+
+footer{
+background-color: black;
+color: white;
+}
+
+footer .pie{
+    width: 70%;
+    box-sizing: border-box;
+    padding: 2em;
+}
+
+.colores{
+    width: 35%;
+    height: 3em;
+    margin-left: 2em;
+    outline: none;
+}
